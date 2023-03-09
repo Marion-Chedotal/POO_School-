@@ -1,0 +1,19 @@
+{
+    "name": "kercode07/pdo",
+    "description": "TD PDO - ecole",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "SchoolProject\\": "app/class"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marion-Chedotal",
+            "email": "marion.chedotal@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
+}
