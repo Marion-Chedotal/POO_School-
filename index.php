@@ -12,6 +12,8 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
+// ======================= TEACHER ========================
+
 // utilisation du namespace pour faire le liens avec les autres fichiers et supprimer la majorité des require
 use SchoolProject\Teacher;
 
@@ -28,9 +30,13 @@ $teacherTab[]= $teacher_2;
 $teacherTab[]= $teacher_3;
 $teacherTab[]= $teacher_4;
 
-// loop to have the personal data of each teacher
+// loop to have the personal data and subject of each teacher
 foreach ($teacherTab as $teacher) {
-    echo $teacher->getPersonalData() . "</br></br>";
+    $personalData = $teacher->getPersonalData();
+    echo 'Nom: ' . $personalData['Nom'] . "<br>";
+    echo 'Prénom: ' . $personalData['Prénom'] . "<br>";
+    echo 'Adresse: ' . $personalData['Adresse'] . "<br>";
+    echo $teacher->getSubject() . "</br></br>";
 }
 
 // actual size of the teacher
@@ -39,7 +45,7 @@ teacher::getSize();
 </br>
 
 <?php
-
+// ======================= STUDENT ========================
 use SchoolProject\Student;
 
 //new student created
@@ -51,10 +57,15 @@ $studentTab= array();
 $studentTab[]= $student_1;
 $studentTab[]= $student_2;
 
-//loop to have the personal data of each student
+//loop to have the personal data and level of each student
 foreach ($studentTab as $student) {
-    echo $student->getPersonalData() . "</br></br>";
+    $personalData = $student->getPersonalData();
+    echo 'Nom: ' . $personalData['Nom'] . "<br>";
+    echo 'Prénom: ' . $personalData['Prénom'] . "<br>";
+    echo 'Adresse: ' . $personalData['Adresse'] . "<br>";
+    echo $student->getLevel() . "</br></br>";
 }
+
 // actual size of the student
 Student::getSize();
 

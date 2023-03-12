@@ -4,24 +4,24 @@ namespace SchoolProject;
 
 class Teacher extends Person 
 {
-    private static $size=0;   
+    private static $size = 0;   
+    protected $subject;
 
     public function __construct($sur, $nam, $add, $sub)
     {
-        $this->surname = $sur;
-        $this->name = $nam;
-        $this->address = $add;
+        parent::__construct($sur, $nam, $add);
         $this->subject = $sub;  
         self::$size +=1;       
     }
 
     public function getPersonalData() 
     {
-        return
-            $this->surname . "</br>"
-            .$this->name ."</br>"
-            .$this->address ."</br>"
-            .$this->subject;
+        return parent::getPersonalData(); 
+    }
+
+    public function getSubject()
+    {
+        return "Matière: " . $this->subject;
     }
 
     public static function getSize()

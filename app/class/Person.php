@@ -8,11 +8,18 @@ abstract class Person
     protected $name;
     protected $address;
 
+    protected function __construct($sur, $nam, $add)
+    {
+        $this->surname = $sur;
+        $this->name = $nam;
+        $this->address = $add;
+    }
+
     public function getPersonalData()
     {
-        return
-            $this->surname . "</br>"
-            .$this->name ."</br>"
-            .$this->address;
+        return $personalData= [
+            'Nom'=> $this->surname,
+            'Prénom' => $this->name,
+            'Adresse' => $this->address];
     }
 }
